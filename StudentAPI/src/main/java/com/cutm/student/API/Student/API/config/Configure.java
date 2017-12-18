@@ -23,15 +23,28 @@ import com.cutm.student.API.Student.API.Services.StudentService;
 @RestController
 public class Configure 
 {
+	//--- The @Autowired annotation tells Spring where an injection needs to occur. ---
 	@Autowired
 	private StudentService myservice;
 	
+	/*
+	 * Method name : selectAll()
+	 * Url         : /students
+	 * Method      : get
+	 * Use         : To get all students detail.
+	 */
 	@RequestMapping("/students")
 	public List<Bean> selectAll()
 	{
 		return myservice.getAllStudent();
 	}
-	
+	/*
+	 * Method name : select()
+	 * Url         : /students
+	 * Method Type : get
+	 * Input 	   : Path variable (regno)
+	 * Use         : To get a particular student detail.
+	 */
 	@RequestMapping("/students/{regno}")
 	public ResponseEntity<Bean> select(@PathVariable String regno)
 	{
@@ -44,7 +57,13 @@ public class Configure
 			return new ResponseEntity<Bean>(HttpStatus.NOT_FOUND);
 		}
 	}
-	
+	/*
+	 * Method name : delete()
+	 * Url         : /students
+	 * Method Type : delete
+	 * Input 	   : Path variable (regno)
+	 * Use         : To delete a particular student detail.
+	 */
 	@RequestMapping(method=RequestMethod.DELETE,value="/students/{regno}")
 	public ResponseEntity<Bean> delete(@PathVariable String regno)
 	{
@@ -57,13 +76,25 @@ public class Configure
 			return new ResponseEntity<Bean>(HttpStatus.NOT_FOUND);
 		}
 	}
-	
+	/*
+	 * Method name : delete()
+	 * Url         : /students
+	 * Method Type : post
+	 * Input 	   : Request Body (bean)
+	 * Use         : To add a new student detail.
+	 */
 	@RequestMapping(method=RequestMethod.POST,value="/students")
 	public void insert(@RequestBody Bean bean)
 	{
 		myservice.addStudent(bean);
 	}
-	
+	/*
+	 * Method name : delete()
+	 * Url         : /students
+	 * Method Type : put
+	 * Input 	   : Request Body (bean) And Path variable (regno)
+	 * Use         : To add a new student detail.
+	 */
 	@RequestMapping(method=RequestMethod.PUT,value="/students/{regno}")
 	public ResponseEntity<Bean> update(@RequestBody Bean bean,@PathVariable String regno)
 	{

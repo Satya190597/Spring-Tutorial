@@ -18,11 +18,12 @@ public class StudentService
 {
 	List<Bean> mylist =  new ArrayList<Bean>(Arrays.asList(new Bean("150301120035","Satya Prakash Nandy","CSE","nandy@yahoo.in"),
 			new Bean("150301120034","Simran Bidhar","EE","simran@yahoo.in")));
+	//---------- Function to get all the student details. ---------
 	public List<Bean> getAllStudent()
 	{
 		return mylist;
 	}
-	
+	//---------- Function to get a particular student with respect to registration number. ---------
 	public Bean getStudent(String regno)
 	{
 		for(Bean element:mylist)
@@ -34,7 +35,7 @@ public class StudentService
 		}
 		return null;
 	}
-	
+	//---------- Function to delete a particular student with the help of registration number. ----------
 	public boolean deleteStudent(String regno)
 	{
 		for(Bean element:mylist)
@@ -47,12 +48,12 @@ public class StudentService
 		}
 		return false;
 	}
-	
+	//---------- Function to insert a new student. ----------
 	public void addStudent(Bean bean)
 	{
 		mylist.add(bean);
 	}
-	
+	//---------- Function to edit a particular student detail. ----------
 	public boolean updateStudent(Bean bean,String regno)
 	{
 		int i=0;
