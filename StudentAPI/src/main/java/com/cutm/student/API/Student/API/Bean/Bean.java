@@ -1,16 +1,21 @@
+/**
+ * Author    : Satya Prakash Nandy
+ * Date      : 13/12/2017
+ * Objective : Bean Class or POJO Class for ( student API ).
+ */
 package com.cutm.student.API.Student.API.Bean;
 
 public class Bean 
 {
 	private String regno,name,branch,email;
 
-	
+	//------------- Default constructor ------
 	public Bean() 
 	{
 		super();
 		
 	}
-
+	//------ Parameterized constructor ------
 	public Bean(String regno, String name, String branch, String email) 
 	{
 		super();
@@ -19,7 +24,7 @@ public class Bean
 		this.branch = branch;
 		this.email = email;
 	}
-	
+	//------ Getter And Setters ------
 	public String getRegno() 
 	{
 		return regno;
@@ -55,7 +60,7 @@ public class Bean
 	{
 		this.email = email;
 	}
-	
+	//------ The toString() method returns the string representation of the object. ------
 	@Override
 	public String toString() 
 	{

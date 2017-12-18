@@ -1,3 +1,8 @@
+/**
+ * Author    : Satya Prakash Nandy
+ * Date      : 13/12/2017
+ * Objective : Controller Class for ( student API ).
+ */
 package com.cutm.student.API.Student.API.config;
 
 import java.util.List;
